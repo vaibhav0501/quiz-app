@@ -3,40 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz App</title>
-<link rel="stylesheet" href="style.css">
+<title>Quiz App Pro</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <div class="quiz-card">
+  <div class="setup-screen">
+    <h1 class="setup-title">Quiz App Pro</h1>
+    <p class="setup-subtitle">Choose your settings to begin</p>
 
-  <!-- Quiz screen -->
-  <div id="quiz-screen">
-    <div class="top-row">
-      <span class="progress-label" id="progress-label">Question 1 of 5</span>
-      <span class="score-label" id="score-label">Score: 0</span>
+    <div class="field-group">
+      <label for="category">Category</label>
+      <select id="category">
+        <option value="">Loading categories...</option>
+      </select>
     </div>
 
-    <div class="progress-bar">
-      <div class="progress-fill" id="progress-fill" style="width: 20%;"></div>
+    <div class="field-group">
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
     </div>
 
-    <h2 id="question-text"></h2>
+    <div class="field-group">
+      <label for="amount">Number of Questions: <span id="amount-value">10</span></label>
+      <input type="range" id="amount" min="5" max="20" value="10">
+    </div>
 
-    <div id="options"></div>
-
-    <button id="next-btn">Next Question</button>
+    <button id="start-btn">Start Quiz</button>
+    <p class="setup-error hidden" id="setup-error">Couldn't load categories. Check your connection and try again.</p>
   </div>
-
-  <!-- Result screen (hidden until quiz ends) -->
-  <div id="result-screen" class="result-screen hidden">
-    <h2>Quiz Complete!</h2>
-    <div class="result-score" id="result-score">0 / 5</div>
-    <p class="result-message" id="result-message"></p>
-    <button id="restart-btn">Try Again</button>
-  </div>
-
 </div>
-<script src="script.js"></script>
+
+<script src="js/api.js"></script>
+<script src="js/setup.js"></script>
 </body>
 </html>
