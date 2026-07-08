@@ -172,7 +172,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   color: var(--ink);
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
 .option-btn:hover:not(:disabled) {
@@ -196,7 +196,26 @@ body {
   font-weight: 700;
 }
 
-#next-btn {
+.pop-animation {
+  animation: pop 0.22s ease;
+}
+
+.shake-animation {
+  animation: shake 0.28s ease;
+}
+
+@keyframes pop {
+  50% { transform: scale(1.03); }
+}
+
+@keyframes shake {
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+}
+
+#next-btn,
+#back-to-setup-btn {
   display: block;
   width: 100%;
   padding: 0.85em;
@@ -208,11 +227,15 @@ body {
   background: var(--accent);
   color: white;
   cursor: pointer;
+}
+
+#next-btn {
   visibility: hidden;
 }
 
 #next-btn.visible { visibility: visible; }
-#next-btn:hover { background: #3b4bc0; }
+#next-btn:hover,
+#back-to-setup-btn:hover { background: #3b4bc0; }
 
 .loading-text {
   text-align: center;

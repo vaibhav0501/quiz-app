@@ -29,6 +29,9 @@ const progressLabel = document.getElementById("progress-label");
 const progressFill = document.getElementById("progress-fill");
 const scoreLabel = document.getElementById("score-label");
 
+const correctSound = document.getElementById("correct-sound");
+const wrongSound = document.getElementById("wrong-sound");
+
 /* ------------------------------------------------------------
    INIT: read settings, fetch questions, start quiz.
    ------------------------------------------------------------ */
@@ -100,8 +103,13 @@ function selectAnswer(selectedIndex, selectedBtn) {
 
   if (selectedIndex === q.correctIndex) {
     score++;
+    selectedBtn.classList.add("pop-animation");
+    correctSound.currentTime = 0;
+    correctSound.play();
   } else {
-    selectedBtn.classList.add("wrong");
+    selectedBtn.classList.add("wrong", "shake-animation");
+    wrongSound.currentTime = 0;
+    wrongSound.play();
   }
 
   scoreLabel.textContent = `Score: ${score}`;
