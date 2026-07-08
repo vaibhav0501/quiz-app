@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz App Pro</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="quiz-card">
+
+  <!-- Loading state while questions are being fetched -->
+  <div id="loading-screen">
+    <p class="loading-text">Loading questions...</p>
+  </div>
+
+  <!-- Quiz screen (hidden until questions load) -->
+  <div id="quiz-screen" class="hidden">
+    <div class="top-row">
+      <span class="progress-label" id="progress-label">Question 1 of 10</span>
+      <span class="score-label" id="score-label">Score: 0</span>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width: 10%;"></div>
+    </div>
+
+    <h2 id="question-text"></h2>
+
+    <div id="options"></div>
+
+    <button id="next-btn">Next Question</button>
+  </div>
+
+  <!-- Error state (e.g. API failed or no questions matched filters) -->
+  <div id="quiz-error-screen" class="result-screen hidden">
+    <h2>Something went wrong</h2>
+    <p class="result-message" id="quiz-error-message"></p>
+    <button id="back-to-setup-btn">Back to Setup</button>
+  </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
