@@ -5,20 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz App Pro</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
 </head>
 <body>
+
+<button id="theme-toggle-btn" class="theme-toggle" aria-label="Switch to dark theme">🌙</button>
 
 <div class="quiz-card">
 
   <!-- Loading state while questions are being fetched -->
   <div id="loading-screen">
-    <p class="loading-text">Loading questions...</p>
+    <div class="skeleton skeleton-question"></div>
+    <div class="skeleton skeleton-option"></div>
+    <div class="skeleton skeleton-option"></div>
+    <div class="skeleton skeleton-option"></div>
+    <div class="skeleton skeleton-option"></div>
   </div>
 
   <!-- Quiz screen (hidden until questions load) -->
   <div id="quiz-screen" class="hidden">
     <div class="top-row">
       <span class="progress-label" id="progress-label">Question 1 of 10</span>
+      <span class="timer-label" id="timer-label">⏱ 30s</span>
       <span class="score-label" id="score-label">Score: 0</span>
     </div>
 

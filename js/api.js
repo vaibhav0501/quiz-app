@@ -86,7 +86,8 @@ async function fetchQuestions(params) {
     return {
       question: decodeHTML(item.question),
       options,
-      correctIndex
+      correctIndex,
+      category: decodeHTML(item.category)
     };
   });
 }

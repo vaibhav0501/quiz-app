@@ -5,15 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz App Pro</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
 </head>
 <body>
+
+<button id="theme-toggle-btn" class="theme-toggle" aria-label="Switch to dark theme">🌙</button>
 
 <div class="quiz-card">
   <div class="result-screen">
     <h2>Quiz Complete!</h2>
-    <div class="result-score" id="result-score">0 / 0</div>
+    <div class="result-score" id="result-score">0 pts</div>
+    <p class="result-accuracy" id="result-accuracy"></p>
     <p class="result-message" id="result-message"></p>
-    <button id="restart-btn">Try Again</button>
+
+    <div class="save-score-row" id="save-score-row">
+      <input type="text" id="name-input" class="name-input" placeholder="Enter your name" maxlength="20">
+      <button id="save-score-btn" class="secondary-btn">Save Score</button>
+    </div>
+    <p class="save-confirm hidden" id="save-confirm">✓ Saved to leaderboard</p>
+
+    <div class="result-actions">
+      <button id="review-btn" class="secondary-btn">Review Answers</button>
+      <button id="restart-btn">Try Again</button>
+    </div>
+
+    <a href="leaderboard.html" class="leaderboard-link">View Leaderboard</a>
   </div>
 </div>
 

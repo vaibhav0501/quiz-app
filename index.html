@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz App Pro</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
 </head>
 <body>
+
+<button id="theme-toggle-btn" class="theme-toggle" aria-label="Switch to dark theme">🌙</button>
 
 <div class="quiz-card">
   <div class="setup-screen">
@@ -15,8 +18,8 @@
 
     <div class="field-group">
       <label for="category">Category</label>
-      <select id="category">
-        <option value="">Loading categories...</option>
+      <div class="skeleton skeleton-select" id="category-skeleton"></div>
+      <select id="category" class="hidden">
       </select>
     </div>
 
@@ -36,6 +39,7 @@
 
     <button id="start-btn">Start Quiz</button>
     <p class="setup-error hidden" id="setup-error">Couldn't load categories. Check your connection and try again.</p>
+    <a href="leaderboard.html" class="leaderboard-link">View Leaderboard</a>
   </div>
 </div>
 

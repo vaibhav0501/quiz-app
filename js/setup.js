@@ -5,6 +5,7 @@
    ============================================================ */
 
 const categorySelect = document.getElementById("category");
+const categorySkeleton = document.getElementById("category-skeleton");
 const difficultySelect = document.getElementById("difficulty");
 const amountSlider = document.getElementById("amount");
 const amountValueLabel = document.getElementById("amount-value");
@@ -32,10 +33,16 @@ async function loadCategories() {
       option.textContent = cat.name;
       categorySelect.appendChild(option);
     });
+
+    categorySkeleton.classList.add("hidden");
+    categorySelect.classList.remove("hidden");
   } catch (err) {
     setupError.classList.remove("hidden");
     categorySelect.innerHTML = '<option value="">Unavailable</option>';
     startBtn.disabled = true;
+
+    categorySkeleton.classList.add("hidden");
+    categorySelect.classList.remove("hidden");
   }
 }
 
